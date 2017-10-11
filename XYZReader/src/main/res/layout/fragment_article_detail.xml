@@ -96,7 +96,6 @@
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:backgroundTint="@color/theme_accent"
         android:src="@drawable/ic_share"
         app:pressedTranslationZ="@dimen/fab_press_translation_z"
         app:elevation="@dimen/fab_elevation" />

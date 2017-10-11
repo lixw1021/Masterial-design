@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
+import android.widget.ImageView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
@@ -23,7 +25,7 @@ import com.example.xyzreader.data.ItemsContract;
 /**
  * An activity representing a single Article detail screen, letting you swipe between articles.
  */
-public class ArticleDetailActivity extends ActionBarActivity
+public class ArticleDetailActivity extends AppCompatActivity
         implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private Cursor mCursor;
@@ -37,6 +39,8 @@ public class ArticleDetailActivity extends ActionBarActivity
     private MyPagerAdapter mPagerAdapter;
     private View mUpButtonContainer;
     private View mUpButton;
+    private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +109,21 @@ public class ArticleDetailActivity extends ActionBarActivity
                 mSelectedItemId = mStartId;
             }
         }
+
+//        imageView = (ImageView) mUpButtonContainer.findViewById(R.id.photo);
+//        mPager.setPageTransformer(false, new ViewPager.PageTransformer() {
+//            @Override
+//            public void transformPage(View page, float position) {
+//                int pageWidth = page.getWidth();
+//                if (position < -1) {
+//                    page.setAlpha(0);
+//                } else if (position <= 1) {
+//                    imageView.setTranslationX(-position*(pageWidth / 2));
+//                } else {
+//                    page.setAlpha(0);
+//                }
+//            }
+//        });
     }
 
     @Override
