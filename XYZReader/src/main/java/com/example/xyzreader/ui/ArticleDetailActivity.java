@@ -110,20 +110,20 @@ public class ArticleDetailActivity extends AppCompatActivity
             }
         }
 
-//        imageView = (ImageView) mUpButtonContainer.findViewById(R.id.photo);
-//        mPager.setPageTransformer(false, new ViewPager.PageTransformer() {
-//            @Override
-//            public void transformPage(View page, float position) {
-//                int pageWidth = page.getWidth();
-//                if (position < -1) {
-//                    page.setAlpha(0);
-//                } else if (position <= 1) {
-//                    imageView.setTranslationX(-position*(pageWidth / 2));
-//                } else {
-//                    page.setAlpha(0);
-//                }
-//            }
-//        });
+        mPager.setPageTransformer(false, new ViewPager.PageTransformer() {
+            @Override
+            public void transformPage(View page, float position) {
+                imageView = (ImageView) page.findViewById(R.id.photo);
+                int pageWidth = page.getWidth();
+                if (position < -1) {
+                    page.setAlpha(1);
+                } else if (position <= 1) {
+                    imageView.setTranslationX(-position*(pageWidth / 2));
+                } else {
+                    page.setAlpha(1);
+                }
+            }
+        });
     }
 
     @Override
